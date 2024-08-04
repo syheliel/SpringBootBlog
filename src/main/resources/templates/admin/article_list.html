@@ -25,18 +25,15 @@
                             </tr>
                             </thead>
                             <tbody>
+                            <!--/*@thymesVar id="articles" type="com.github.pagehelper.PageInfo<com.wip.model.ContentDomain>"*/-->
                                 <th:block th:each="post : ${articles.list}">
                                     <tr th:cid="${post.cid}">
                                         <td>
                                             <a th:href="@{'/admin/article/'+${post.cid}}" th:text="${post.title}"></a>
                                         </td>
-                                        <td>
-                                            <th:block th:if="${post.type == 'post'}">
-                                                <span class="label label-success">博文</span>
-                                            </th:block>
-                                            <th:block th:if="${post.type == 'photo'}">
-                                                <span class="label label-default">作品</span>
-                                            </th:block>
+                                        <td th:switch="${post.type}">
+                                            <span th:case="'post'" class="label label-success">博文</span>
+                                            <span th:case="'photo'" class="label label-default">作品</span>
                                         </td>
                                         <td><th:block th:text="${commons.fmtdate(post.created, 'yyyy-MM-dd HH:mm:ss')}"/></td>
                                         <td><th:block th:text="${post.hits}"/></td>
@@ -62,7 +59,6 @@
                                         </td>
                                     </tr>
                                 </th:block>
-
                             </tbody>
                         </table>
                         <div th:replace="comm/macros :: pageAdminNav(${articles})"></div>
@@ -85,10 +81,10 @@
                     url : '/admin/article/delete',
                     data: {cid: cid},
                     success: function (result) {
-                        if(result && result.code == 'success'){
+                        if(result && result.code === 'success'){
                             tale.alertOkAndReload('文章删除成功');
                         } else {
-                            tale.alertError(result.msg || '文章删除失败');
+                            tale.alertError(result || '文章删除失败');
                         }
                     }
                 });

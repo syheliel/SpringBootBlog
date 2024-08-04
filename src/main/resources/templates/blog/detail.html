@@ -10,6 +10,7 @@
             <div id="posts" class="posts-expand">
                 <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
                     <div class="post-block" style="opacity: 1; display: block;">
+                        <!--/*@thymesVar id="article" type="com.wip.model.ContentDomain"*/-->
                         <header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
                             <h1 class="post-title" itemprop="name headline" th:text="${article.title}"></h1>
                             <div class="post-meta">
@@ -29,9 +30,15 @@
                                     <span class="post-meta-item-text">分类于</span>
                                     <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
                                         <a th:href="@{'/categories/'} + ${article.categories}" itemprop="url" rel="index">
+                                            <!--/*@thymesVar id="article" type="com.wip.model.ContentDomain"*/-->
                                             <span itemprop="name" th:text="${article.categories}"></span>
                                         </a>
                                     </span>
+                                </span>
+                                <span class="post-viewnum">
+                                    <span class="post-meta-divider">|</span>
+                                    <span>浏览量</span>
+                                    <span th:text="${article.getHits()}"></span>
                                 </span>
                             </div>
                         </header>

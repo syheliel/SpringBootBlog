@@ -47,10 +47,10 @@ public class AttachController extends BaseController {
     @GetMapping(value = "")
     public String index(
             HttpServletRequest request,
-            @ApiParam(name = "page", value = "页数", required = false)
+            @ApiParam(name = "page", value = "页数")
             @RequestParam(name = "page", required = false, defaultValue = "1")
             int page,
-            @ApiParam(name = "limit", value = "条数", required = false)
+            @ApiParam(name = "limit", value = "条数")
             @RequestParam(name = "limit", required = false, defaultValue = "12")
             int limit
     ) {
