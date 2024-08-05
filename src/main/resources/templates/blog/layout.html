@@ -12,6 +12,7 @@
     <link th:href="@{/blog/css/fonts.css}"/>
     <link th:href="@{/blog/font-awesome/4.6.2/css/font-awesome.min.css}" rel="stylesheet" type="text/css"/>
     <link th:href="@{/blog/css/main.css}" rel="stylesheet" type="text/css"/>
+    <link th:href="@{/tailwind.css}" rel="stylesheet" type="text/css" />
     <meta name="keywords" content="KyrieCao"/>
     <link rel="shortcut icon" type="image/x-icon" th:href="@{/blog/image/favicon.ico}"/>
     <meta name="description" content="Trust yourself！"/>
@@ -46,7 +47,7 @@
 </head>
 <body>
 
-    <div class="container sidebar-position-left page-home">
+    <div class="container sidebar-position-left relative mt-10 mb-10 p-0 border-l-0">
         <div class="headband"></div>
         <div th:replace="blog/fragments/header::header"></div>
         <main id="main" class="main">

@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    h1 {
+        @apply text-3xl text-gray-800 text-center;
+        @apply after:content-[""] after:block after:border-2 after:border-gray-300 after:rounded-md after:shadow-md;
+    }
+
+    h2 {
+        @apply text-xl text-gray-700;
+        @apply after:content-[""] after:block after:border-[1px] after:border-gray-200 after:rounded-md after:shadow-sm;
+    }
+
+    ul, ol {
+        @apply list-disc;
+        @apply list-inside;
+    }
+}

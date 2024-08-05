@@ -15,8 +15,8 @@
                     <th:block th:if="${articles}">
                         <article class="post post-type-normal" th:each="article : ${articles}">
                             <header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-                                <h2 class="post-title">
-                                    <a class="post-title-link" th:href="@{'/detail/' + ${article.cid}}" itemprop="url">
+                                <h2>
+                                    <a th:href="@{'/detail/' + ${article.cid}}" itemprop="url">
                                         <span itemprop="name" th:text="${article.title}"></span>
                                     </a>
                                 </h2>

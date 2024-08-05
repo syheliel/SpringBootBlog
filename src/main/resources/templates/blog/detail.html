@@ -12,7 +12,7 @@
                     <div class="post-block" style="opacity: 1; display: block;">
                         <!--/*@thymesVar id="article" type="com.wip.model.ContentDomain"*/-->
                         <header class="post-header" style="opacity: 1; display: block; transform: translateY(0px);">
-                            <h1 class="post-title" itemprop="name headline" th:text="${article.title}"></h1>
+                            <h1 itemprop="name headline" th:text="${article.title}"></h1>
                             <div class="post-meta">
                                 <span class="post-time">
                                     <span class="post-meta-item-icon">
@@ -42,7 +42,7 @@
                                 </span>
                             </div>
                         </header>
-                        <div class="post-body" itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
+                        <div itemprop="articleBody" style="opacity: 1; display: block; transform: translateY(0px);">
                             <th:block th:utext="${commons.article(article.content)}"></th:block>
                         </div>
                     </div>
